@@ -1,4 +1,4 @@
-package com.ozz.cache.caffeine;
+package com.ozz.cache.service;
 
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
@@ -9,7 +9,7 @@ import java.util.function.Function;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CaffeineDemo<K, V> {
+public class MyCaffeineDemo<K, V> {
 
   /**
    * 手动加载：不存在返回空
@@ -18,6 +18,7 @@ public class CaffeineDemo<K, V> {
     return Caffeine.newBuilder()
         .maximumSize(10_000)
         .expireAfterWrite(Duration.ofHours(2))
+//        .expireAfterAccess(1, TimeUnit.HOURS)
 //        .removalListener((key,value,cause) -> System.out.println(String.format("key %s was removed (%s)", key, cause)))
         .build();
   }

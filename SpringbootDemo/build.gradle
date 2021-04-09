@@ -26,6 +26,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 	implementation 'com.github.ben-manes.caffeine:caffeine:3.0.1'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'

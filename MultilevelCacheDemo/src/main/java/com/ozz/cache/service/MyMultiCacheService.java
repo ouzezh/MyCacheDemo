@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @CacheConfig(cacheNames = {"cache1"})
-public class MyCacheService<K, V> {
+public class MyMultiCacheService<K, V> {
   @Cacheable
   public String getData(Integer days, Integer hours) {
     return getData_(days, hours);

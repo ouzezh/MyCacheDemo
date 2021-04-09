@@ -12,9 +12,13 @@ auto-configured priority : RedisCache > CaffeineCache > ConcurrentMapCache
 [Springboot Cache Annotation](https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#cache-annotations)
 
 
+
 # 二级缓存实现
 
 [multilevel-cache-spring-boot-starter](https://github.com/pig-mesh/multilevel-cache-spring-boot-starter)
+
+在 Springboot Cache 基础上直接引入即可
+
 
 [autoCache](https://github.com/haozi2015/autoCache)
 

@@ -1,0 +1,14 @@
+spring:
+  redis:
+    password: x
+    sentinel:
+      master: master7922
+      nodes: localhost:17922,localhost:17922
+  cache:
+    multi:  # com.pig4cloud.plugin.cache.properties.CacheConfigProperties
+      cacheNames: cache1,cache2
+      redis:
+        defaultExpiration: 3600_000
+      caffeine:
+        maximumSize: 10000
+        expireAfterWrite: 600_000

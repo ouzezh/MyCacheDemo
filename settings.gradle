@@ -1,4 +1,4 @@
 rootProject.name = 'MyCacheDemo'
 
-include 'CaffeineDemo','SpringbootDemo'
+include 'CaffeineDemo','SpringbootDemo','MultilevelCacheDemo'
 

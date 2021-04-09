@@ -1,0 +1,6 @@
+#  redis:
+#    password: x
+#    sentinel:
+#      master: master7922
+#      nodes: localhost:17922,localhost:17922
+

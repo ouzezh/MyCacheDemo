@@ -7,6 +7,7 @@ spring:
   cache:
     multi:  # com.pig4cloud.plugin.cache.properties.CacheConfigProperties
       cacheNames: cache1,cache2
+      dynamic: false
       redis:
         defaultExpiration: 3600_000
       caffeine:

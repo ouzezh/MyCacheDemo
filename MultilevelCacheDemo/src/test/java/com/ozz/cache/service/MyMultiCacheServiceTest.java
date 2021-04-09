@@ -16,13 +16,6 @@ class MyMultiCacheServiceTest {
 
   @Test
   void getData() {
-    myMultiCacheService.delCache(1,1);
-    myMultiCacheService.delCache(1,2);
-    myMultiCacheService.delCache(1,3);
-    myMultiCacheService.delCache(2,1);
-    myMultiCacheService.delCache(2,2);
-    myMultiCacheService.delCache(2,3);
-
     int days = 2, hours = 1;
     String ldt = myMultiCacheService.getData(days, hours);
     sleep(5);

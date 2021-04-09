@@ -9,7 +9,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@CacheConfig(cacheNames = {"cache1", "cache2"})
+@CacheConfig(cacheNames = {"cache1"})
 public class MyCacheService<K, V> {
   @Cacheable
   public String getData(Integer days, Integer hours) {

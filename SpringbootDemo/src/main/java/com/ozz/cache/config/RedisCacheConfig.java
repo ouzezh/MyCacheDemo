@@ -20,4 +20,5 @@ public class RedisCacheConfig {
         .withCacheConfiguration("cache2",
             RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofHours(1)));
   }
+
 }

@@ -1,4 +1,4 @@
 rootProject.name = 'MyCacheDemo'
 
-include 'CaffeineCacheDemo'
+include 'CaffeineDemo'
 

@@ -16,7 +16,7 @@ public class RedisCacheConfig {
   public RedisCacheManagerBuilderCustomizer myRedisCacheManagerBuilderCustomizer() {
     return (builder) -> builder
         .withCacheConfiguration("cache1",
-            RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofSeconds(10)))
+            RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofSeconds(60)))
         .withCacheConfiguration("cache2",
             RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofHours(1)));
   }

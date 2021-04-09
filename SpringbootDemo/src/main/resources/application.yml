@@ -10,5 +10,5 @@ spring:
     redis:
       time-to-live: 120m
     caffeine:
-      spec: maximumSize=500,expireAfterWrite=600s
+      spec: maximumSize=10000,expireAfterWrite=1800s
 

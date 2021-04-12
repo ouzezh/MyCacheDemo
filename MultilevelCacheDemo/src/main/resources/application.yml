@@ -9,7 +9,9 @@ spring:
       cacheNames: cache1,cache2
       dynamic: false
       redis:
-        defaultExpiration: 3600_000
+        defaultExpiration: 3600_000 # 默认过期时间
+        expires:  # 指定缓存过期时间
+          cache1: 1800_000
       caffeine:
         maximumSize: 10000
         expireAfterWrite: 600_000

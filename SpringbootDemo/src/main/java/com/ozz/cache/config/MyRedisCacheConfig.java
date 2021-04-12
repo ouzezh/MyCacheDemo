@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 
 @Configuration
-public class RedisCacheConfig {
+public class MyRedisCacheConfig {
 
   /**
    * 针对不同 cache 设置不同过期时间

@@ -2,6 +2,7 @@ package com.ozz.cache.service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -14,6 +15,11 @@ public class MyCacheService<K, V> {
   @Cacheable(key="'my'+':'+#days+':'+#hours")
   public String getData(Integer days, Integer hours) {
     return getData_(days, hours);
+  }
+
+  @Cacheable(key="'my'+':'+#days+':'+#hours", condition = "#days!=null && #hours!=null && #hours!=''")
+  public String getDataCheck(Integer days, String hours) {
+    return getData_(days, Strings.isBlank(hours) ? 0 : Integer.valueOf(hours));
   }
 
   @CachePut(key="'my'+':'+#days+':'+#hours")

@@ -1,6 +1,7 @@
 package com.ozz.cache.service;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.util.Strings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,10 +17,15 @@ class MyCacheServiceTest {
 
   @Test
   void getData() {
-    int days = 1, hours = 1;
+    Integer days = 1, hours = 1;
     String ldt = myCacheService.getData(days, hours);
     sleep(5);
     Assert.isTrue(ldt.equals(myCacheService.getData(days, hours)), StringUtils.EMPTY);
+
+    ldt = myCacheService.getDataCheck(days, null);
+    sleep(5);
+    Assert.isTrue(!ldt.equals(myCacheService.getDataCheck(days, null)), StringUtils.EMPTY);
+    Assert.isTrue(!ldt.equals(myCacheService.getDataCheck(days, Strings.EMPTY)), StringUtils.EMPTY);
   }
 
   @Test

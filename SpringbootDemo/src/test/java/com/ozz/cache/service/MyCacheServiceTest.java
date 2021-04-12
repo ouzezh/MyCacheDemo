@@ -4,14 +4,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.util.Assert;
 
 @SpringBootTest
 class MyCacheServiceTest {
   @Autowired
   MyCacheService myCacheService;
-//  @Autowired
-//  CacheManager cacheManager;
+  @Autowired
+  CacheManager cacheManager;
 
   @Test
   void getData() {

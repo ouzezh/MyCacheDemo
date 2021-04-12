@@ -11,17 +11,17 @@ import org.springframework.stereotype.Service;
 @Service
 @CacheConfig(cacheNames = {"cache1"})
 public class MyCacheService<K, V> {
-  @Cacheable(key="'my'+'_'+#days+'_'+#hours")
+  @Cacheable(key="'my'+':'+#days+':'+#hours")
   public String getData(Integer days, Integer hours) {
     return getData_(days, hours);
   }
 
-  @CachePut(key="'my'+'_'+#days+'_'+#hours")
+  @CachePut(key="'my'+':'+#days+':'+#hours")
   public String refreshAndGetData(Integer days, Integer hours) {
     return getData_(days, hours);
   }
 
-  @CacheEvict(key="'my'+'_'+#days+'_'+#hours")
+  @CacheEvict(key="'my'+':'+#days+':'+#hours")
   public void delCache(Integer days, Integer hours) {
   }
 

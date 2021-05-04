@@ -8,6 +8,12 @@ group = 'com.ozz.cache'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
 	mavenLocal()
 //    maven { url 'http://nexus.staff.xdf.cn/repository/public' }

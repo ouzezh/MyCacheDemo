@@ -1,5 +1,6 @@
 package com.ozz.cache.service;
 
+import com.haozi.cache.core.AutoCache;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.springframework.cache.annotation.CacheConfig;
@@ -27,6 +28,13 @@ public class MyCacheService<K, V> {
 
   private String getData_(Integer days, Integer hours) {
     return LocalDateTime.now().plusDays(days).plusHours(hours).format(
+        DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "_" + System.nanoTime();
+  }
+
+  @AutoCache(cacheName = "sxXX", localTTL = 60000, remoteTTL = 3600000, key = "#schoolId")
+  public String testCAche(Integer schoolId) {
+    System.out.println("refresh data");
+    return schoolId + LocalDateTime.now().format(
         DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "_" + System.nanoTime();
   }
 }

@@ -11,8 +11,8 @@ import org.springframework.util.Assert;
 class MyCacheServiceTest {
   @Autowired
   MyCacheService myCacheService;
-  @Autowired
-  CacheManager cacheManager;
+//  @Autowired
+//  CacheManager cacheManager;
 
   @Test
   void getData() {
@@ -45,5 +45,12 @@ class MyCacheServiceTest {
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  @Test
+  void testCAche() {
+    System.out.println(myCacheService.testCAche(1));
+    sleep(5);
+    System.out.println(myCacheService.testCAche(1));
   }
 }

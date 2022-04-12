@@ -1,15 +1,16 @@
 package com.ozz.cache.service;
 
+import cn.hutool.core.util.StrUtil;
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
-import java.time.LocalDateTime;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
+
+import java.time.LocalDateTime;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 @SpringBootTest
 class MyCaffeineDemoTest {
@@ -23,10 +24,10 @@ class MyCaffeineDemoTest {
     Cache<String, String> cache = myCaffeineDemo.cache();
     // 检索一个entry，如果没有则为null
     String graph = cache.getIfPresent(key);
-    Assert.isNull(graph, StringUtils.EMPTY);
+    Assert.isNull(graph, StrUtil.EMPTY);
     // 检索一个entry，如果entry为null，则通过key创建一个entry并加入缓存
     graph = cache.get(key, k -> queryData(key));
-    Assert.notNull(graph, StringUtils.EMPTY);
+    Assert.notNull(graph, StrUtil.EMPTY);
     // 插入或更新一个实体
     cache.put(key, graph);
     // 移除一个实体

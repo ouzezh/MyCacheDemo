@@ -1,6 +1,6 @@
 package com.ozz.cache.service;
 
-import org.apache.commons.lang3.StringUtils;
+import cn.hutool.core.util.StrUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +19,7 @@ class MyMultiCacheServiceTest {
     int days = 2, hours = 1;
     String ldt = myMultiCacheService.getData(days, hours);
     sleep(5);
-    Assert.isTrue(ldt.equals(myMultiCacheService.getData(days, hours)), StringUtils.EMPTY);
+    Assert.isTrue(ldt.equals(myMultiCacheService.getData(days, hours)), StrUtil.EMPTY);
   }
 
   @Test
@@ -27,7 +27,7 @@ class MyMultiCacheServiceTest {
     int days = 2, hours = 2;
     String ldt = myMultiCacheService.getData(days, hours);
     sleep(5);
-    Assert.isTrue(!ldt.equals(myMultiCacheService.refreshAndGetData(days, hours)), StringUtils.EMPTY);
+    Assert.isTrue(!ldt.equals(myMultiCacheService.refreshAndGetData(days, hours)), StrUtil.EMPTY);
   }
 
   @Test
@@ -36,7 +36,7 @@ class MyMultiCacheServiceTest {
     String ldt = myMultiCacheService.getData(days, hours);
     sleep(5);
     myMultiCacheService.delCache(days, hours);
-    Assert.isTrue(!ldt.equals(myMultiCacheService.getData(days, hours)), StringUtils.EMPTY);
+    Assert.isTrue(!ldt.equals(myMultiCacheService.getData(days, hours)), StrUtil.EMPTY);
   }
 
   private void sleep(int millis) {

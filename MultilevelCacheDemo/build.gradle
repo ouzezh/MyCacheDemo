@@ -16,7 +16,6 @@ configurations {
 
 repositories {
 	mavenLocal()
-//    maven { url 'http://nexus.staff.xdf.cn/repository/public' }
 	maven { url 'https://maven.aliyun.com/repository/central' }
 	maven { url 'https://maven.aliyun.com/repository/public' }
 	maven { url 'https://maven.aliyun.com/repository/google' }
@@ -35,7 +34,9 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'com.pig4cloud.plugin:multilevel-cache-spring-boot-starter:0.0.4'
+    implementation 'cn.hutool:hutool-all:5.8.0.M2'// Hutool是一个小而全的Java工具类库
+
+	implementation 'com.pig4cloud.plugin:multilevel-cache-spring-boot-starter:0.0.5'
 	implementation 'com.github.ben-manes.caffeine:caffeine:3.0.6'
 
 	compileOnly 'org.projectlombok:lombok'

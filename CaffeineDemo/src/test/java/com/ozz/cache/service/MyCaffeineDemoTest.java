@@ -1,6 +1,7 @@
 package com.ozz.cache.service;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.log.StaticLog;
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
 import org.junit.jupiter.api.Test;
@@ -46,7 +47,7 @@ class MyCaffeineDemoTest {
         .asyncLoadingCache(key -> queryData(key));
     CompletableFuture<String> cf = cache.get(key);
     String v = cf.get();
-    System.out.println(v);
+    StaticLog.info(v);
     Assert.notNull(v, "loading fail");
   }
 

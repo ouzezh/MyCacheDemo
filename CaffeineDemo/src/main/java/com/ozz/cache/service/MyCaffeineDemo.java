@@ -19,7 +19,7 @@ public class MyCaffeineDemo<K, V> {
         .maximumSize(10_000)
         .expireAfterWrite(Duration.ofHours(2))
 //        .expireAfterAccess(1, TimeUnit.HOURS)
-//        .removalListener((key,value,cause) -> System.out.println(String.format("key %s was removed (%s)", key, cause)))
+//        .removalListener((key,value,cause) -> StaticLog.info(String.format("key %s was removed (%s)", key, cause)))
         .build();
   }
 
